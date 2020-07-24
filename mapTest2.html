@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>:: GEOLOCATION + Daum Map API ::</title>
+</head>
+<body>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        function getLocation(position) {
+
+            var latitud = position.coords.latitude;
+            var longitud = position.coords.longitude;
+            function alertDialogBox() {
+
+        alert(latitud, " ", longitud);
+
+    }
+
+        }
+
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(getLocation, function(error) {
+                consol.log(error.message);
+            });
+        } else {
+            consol.log("Geolocation을 지원하지 않는 브라우저 입니다.");
+        }
+    });
+</script>
+</body>
+</html>
